@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet href="http://moise.sourceforge.net/xml/os.xsl" type="text/xsl" ?>
+
+<organisational-specification
+    id="arena"
+    os-version="0.8"
+
+    xmlns='http://moise.sourceforge.net/os'
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:schemaLocation='http://moise.sourceforge.net/os
+                        http://moise.sourceforge.net/xml/os.xsd' >
+
+    <structural-specification>
+
+        <role-definitions>
+            <role id="auctioneer" />
+            <role id="participant" />
+        </role-definitions>
+
+        <group-specification id="arenaGroup">
+            <roles>
+                <role id="auctioneer" min="1" max="1"/>
+                <role id="participant" min="0" max="10"/>
+            </roles>
+        </group-specification>
+
+    </structural-specification>
+
+    <functional-specification>
+        <scheme id="auction_arena">
+
+            <goal id="arena">
+                <plan operator="sequence">
+                    <goal id="start"/>
+                    <goal id="decide" ttf="10 seconds"/>
+                    <goal id="update_value" ttf="60 seconds"/>
+                    <goal id="winner_announce"/>
+                    <goal id="won"/>
+                </plan>
+            </goal>
+
+            <mission id="sell" min="1" max="1">
+                <goal id="start"/>
+                <goal id="update_value"/>
+                <goal id="winner_announce" />
+            </mission>
+
+            <mission id="buy" min="1">
+                <goal id="decide"/>
+                <goal id="won"/>
+            </mission>
+
+        </scheme>
+    </functional-specification>
+
+    <normative-specification>
+        <norm id="n1" type="obligation" role="auctioneer" mission="sell"/>
+        <norm id="n2" type="obligation" role="participant" mission="buy"/>
+    </normative-specification>
+
+</organisational-specification>
