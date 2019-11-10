@@ -2,9 +2,9 @@
 
 A japanse auction developed in:
 
-1 - Jason
-2 - Jason + CArtAgO
-3 - Jason + CArtAgO + Moise
+- Jason
+- Jason + CArtAgO
+- Jason + CArtAgO + Moise
 
 A Japanese auction (also called ascending clock auction) is a dynamic auction format. It proceeds in the following way:
 
