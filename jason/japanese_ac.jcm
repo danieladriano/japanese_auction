@@ -20,5 +20,6 @@ mas japanese_ac {
     agent maria    : participant.asl
     agent theo     : participant.asl
     agent john     : participant.asl
+    agent jack     : participant.asl
 }
 
