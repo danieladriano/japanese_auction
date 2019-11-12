@@ -25,3 +25,5 @@
 
 .gradle/
 .settings/
+bin/
+log/

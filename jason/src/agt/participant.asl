@@ -3,7 +3,7 @@ is_in(false).
 
 !start.
 
-+!start : V = math.round(math.random * 100)
++!start : V = math.random * 100
     <-  -+value(V);
         .print("The horse value for me is $", V).
 
